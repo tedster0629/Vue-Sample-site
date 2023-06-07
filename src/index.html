@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<script type='text/javascript'>
+		var baseUrlRegex = new RegExp('^(?:\\/api)?(?:\\/([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}))?(?:(?:\\/dxsites\\/)([\\w\\d_\\-%]+))?(?:\\/)?(?:.*)$');
+		var [total, tenantId, siteId] = baseUrlRegex.exec(document.location.pathname);
+		var baseUrl = window.location.hostname === 'localhost' ? '/' // local development
+			: tenantId ? siteId
+				? '/' + tenantId + '/dxsites/' + siteId + '/' // site and tenant
+				: '/' + tenantId + '/' // just tenant
+			: siteId
+				? '/dxsites/' + siteId + '/' // just site
+				: '/'; // no IDs
+		document.write('<base href="' + baseUrl + '">');
+	</script>
+	<meta charset="utf-8">
+	<title>Site</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="app"></div>
+	<script src="//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+	<script>
+	WebFont.load({
+		google: {
+			families: ['Vidaloka', 'Roboto']
+		}
+	});
+	</script>
+	<script src="//code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

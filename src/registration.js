@@ -1,0 +1,13 @@
+import Vue from 'vue';
+Vue.component('carousel-dynamic-list', () => import(/* webpackChunkName: "carouselDynamicList" */'./layouts/carouselDynamicList'));
+Vue.component('gallery-dynamic-list', () => import(/* webpackChunkName: "galeryDynamicList" */'./layouts/galleryDynamicList'));
+Vue.component('gallery-list', () => import(/* webpackChunkName: "galleryList" */'./layouts/galleryList'));
+Vue.component('view-all-button', () => import(/* webpackChunkName: "viewAllButton" */'./components/viewAllButton'));
+Vue.component('hero-image', () => import(/* webpackChunkName: "heroImage" */'./layouts/heroImage'));
+Vue.component('hero-video', () => import(/* webpackChunkName: "heroVideo" */'./layouts/heroVideo'));
+Vue.component('feature', () => import(/* webpackChunkName: "feature" */'./layouts/feature'));
+Vue.component('vertical-list', () => import(/* webpackChunkName: "verticalList" */'./layouts/verticalList'));
+Vue.component('sign-up', () => import(/* webpackChunkName: "signUp" */'./layouts/signUp'));
+Vue.component('event', () => import(/* webpackChunkName: "event" */'./layouts/event'));
+Vue.component('design-article', () => import(/* webpackChunkName: "designArticle" */'./layouts/designArticle'));
+Vue.component('search-results', () => import(/* webpackChunkName: "searchResults" */'./layouts/search-results/searchResultsLayout'));
